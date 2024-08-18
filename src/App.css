@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.zWfUXoQplX7DedyRJ0Rl,
+._M8cCug8H18ALQ05cNMt,
+.rfwQfzz6DVBVPNyQIs9o,
+.n6GuqIk3cK3cSgL5gW1Z,
+.Z2PYS5vNVghY4m46zQQV,
+.BYpXSnOHfrC2td4QRijO{
+    font-family: 'Lexend', Arial, Helvetica, sans-serif;
+}
+
+.pOvRwHj19chJGkgemUH3{
+    position: relative;
+}
+
+.logo-container{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.logo-container img{
+    max-width: 80px;
+    height: auto;
+    background-color: #0066FF;
+    border-radius: 100%;
+}
+
+.logo-hidden{
+    display: none;
+}

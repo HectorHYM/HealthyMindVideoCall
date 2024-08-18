@@ -12,7 +12,8 @@
   "dependencies": {
     "@zegocloud/zego-uikit-prebuilt": "^2.7.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "zego-superboard-web": "^2.15.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
