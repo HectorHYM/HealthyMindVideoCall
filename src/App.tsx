@@ -1,4 +1,4 @@
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
 import { ZegoSuperBoardManager } from "zego-superboard-web";
@@ -24,7 +24,6 @@ function getUrlParams(url = window.location.href) {
 }
 
 function App() {
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
   const inactivityTimeout = 15 * 60 * 1000; // 15 minutos de inactividad
 
   const myMeeting = async (element: HTMLElement) => {
@@ -108,7 +107,6 @@ function App() {
         console.log("Cierre de sesión por inactividad.");
         auth.signOut();
       }, inactivityTimeout);
-      setTimeoutId(timeoutId);
     };
 
     const activityEvents = ["mousemove", "keydown", "mousedown", "touchstart", "scroll"];
@@ -117,7 +115,7 @@ function App() {
     });
 
     // Evento para detectar si el usuario sale de la ventana o pestaña
-    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+    const handleBeforeUnload = () => {
       if (auth.currentUser) {
         console.log("Cierre de sesión al salir de la ventana.");
         auth.signOut();
